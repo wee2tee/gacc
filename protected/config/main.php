@@ -1,7 +1,7 @@
 <?php
 
 // uncomment the following to define a path alias
-Yii::setPathOfAlias('local','path/to/local-folder');
+//Yii::setPathOfAlias('local','path/to/local-folder');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
@@ -10,9 +10,11 @@ return array(
 	'name'=>'gAccount',
 
         // path aliases
+        /*
         'aliases' => array(
             'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change this if necessary
         ),
+        */
 
         // preloading 'log' component
 	'preload'=>array('log'),
@@ -21,8 +23,10 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                /*
                 'bootstrap.helpers.TbHtml',
                 'bootstrap.helpers.TbArray',
+                */
 	),
 
 	'modules'=>array(
@@ -88,9 +92,11 @@ return array(
 				*/
 			),
 		),
+                /*
                 'bootstrap' => array(
                     'class' => 'bootstrap.components.TbApi',   
                 ),
+                */
 	),
 
 	// application-level parameters that can be accessed

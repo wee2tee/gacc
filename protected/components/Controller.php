@@ -20,4 +20,20 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+        
+        public function init() // Muti language
+        {
+            parent::init();
+
+            $session=new CHttpSession;
+            $session->open();
+            Yii::app()->language = isset(Yii::app()->session['sess_lang']) ? Yii::app()->session['sess_lang'] : 'th';
+
+        }
+
+        public function actionSetlanguage($lang = NULL) 
+        {
+                Yii::app()->session['sess_lang']= strtolower($lang);
+                Yii::app()->request->redirect(Yii::app()->user->returnUrl);    
+        }
 }
