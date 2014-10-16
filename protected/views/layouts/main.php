@@ -39,30 +39,22 @@ Yii::app()->user->returnUrl=$http->getUrl();
                     !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
                   if (document.documentElement.requestFullscreen) {
                     document.documentElement.requestFullscreen();
-                    $("#gofull, #exitfull").toggle();
                   } else if (document.documentElement.msRequestFullscreen) {
                     document.documentElement.msRequestFullscreen();
-                    $("#gofull, #exitfull").toggle();
                   } else if (document.documentElement.mozRequestFullScreen) {
                     document.documentElement.mozRequestFullScreen();
-                    $("#gofull, #exitfull").toggle();
                   } else if (document.documentElement.webkitRequestFullscreen) {
                     document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-                    $("#gofull, #exitfull").toggle();
                   }
                 } else {
                   if (document.exitFullscreen) {
                     document.exitFullscreen();
-                    $("#gofull, #exitfull").toggle();
                   } else if (document.msExitFullscreen) {
                     document.msExitFullscreen();
-                    $("#gofull, #exitfull").toggle();
                   } else if (document.mozCancelFullScreen) {
                     document.mozCancelFullScreen();
-                    $("#gofull, #exitfull").toggle();
                   } else if (document.webkitExitFullscreen) {
                     document.webkitExitFullscreen();
-                    $("#gofull, #exitfull").toggle();
                   }
                 }
             }
@@ -120,16 +112,9 @@ Yii::app()->user->returnUrl=$http->getUrl();
             <div class="navbar navbar-default navbar-fixed-top custom-color" role="navigation" id="navbar">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button id="menu-toggle-btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                          <span class="sr-only">Toggle navigation</span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                        </button>
                         <!--<a class="navbar-brand" href="#">gAccount</a>-->
                         <?php
-                            echo CHtml::image("images/logo.png", "gAccount", array("id"=>"gofull", "style"=>"padding-top:1px; padding-right: 5px; padding-left: 5px;", "onclick"=>"return toggleFullScreen()", "title"=> Yii::t("sys_msg", "fullscreen") ));
-                            echo CHtml::image("images/logo.png", "gAccount", array("id"=>"exitfull", "style"=>"padding-top:1px; padding-right: 5px; padding-left: 5px; display: none;", "onclick"=>"return toggleFullScreen()", "title"=> Yii::t("sys_msg", "exit-fullscreen") ));
+                            echo CHtml::image("images/logo36_22.png", "gAccount", array( "style"=>"padding-top: 1px; padding-right: 5px; padding-left: 5px;" ));
                         ?>
                     </div>
                     <div class="collapse navbar-collapse">
@@ -139,11 +124,26 @@ Yii::app()->user->returnUrl=$http->getUrl();
                             //require_once '_main_menu.php';
                         ?>
                     </div><!--/.nav-collapse -->
-                    <div class="navbar-layer-btn-container">
+                    <div class="navbar-btn-container fullscreen-btn">
+                        <button type="button" class="navbar-fullscreen-toggle" title="<?php echo Yii::t("sys_msg", "toggle-screen") ?>" onclick="return toggleFullScreen()">
+                            <div class="arrow"></div>
+                            <div class="sm-monitor-border"><div class="sm-monitor"></div></div>
+                            <div class="lg-monitor-border"><div class="lg-monitor"></div></div>
+                        </button>
+                    </div>
+                    <div class="navbar-btn-container layer-btn">
                         <button type="button" class="navbar-layer-toggle" title="<?php echo Yii::t("sys_msg", "select-window") ?>">
                             <span class="icon-layer1"></span>
                             <span class="icon-layer2"></span>
                             <span class="icon-layer3"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-btn-container resp-menu">
+                        <button id="menu-toggle-btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
                         </button>
                     </div>
                 </div>
