@@ -27,8 +27,9 @@ class Controller extends CController
 
             $session=new CHttpSession;
             $session->open();
-            Yii::app()->language = isset(Yii::app()->session['sess_lang']) ? Yii::app()->session['sess_lang'] : 'th';
-
+            //unset(Yii::app()->session['sess_lang']);
+            Yii::app()->session['sess_lang'] = (isset(Yii::app()->session['sess_lang']) ? Yii::app()->session['sess_lang'] : 'th');
+            Yii::app()->language = Yii::app()->session['sess_lang'];
         }
 
         public function actionSetlanguage($lang = NULL) 
