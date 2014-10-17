@@ -98,37 +98,50 @@ body{
     border: #DDD 1px solid;
     background-color: transparent;
 }
+.navbar-layer-toggle.disabled,
+.navbar-layer-toggle.disabled:hover{
+    background-color: transparent;
+    cursor: default;
+}
+.navbar-layer-toggle.disabled .ic.layer1{
+    background-color: #DDD;
+}
+.navbar-layer-toggle.disabled .ic.layer2,
+.navbar-layer-toggle.disabled .ic.layer3{
+    border-color: #DDD;
+}
 .navbar-layer-toggle:hover,
 .navbar-layer-toggle.active{
     background-color: #DDD;
 }
-.icon-layer1,
-.icon-layer2,
-.icon-layer3{
+.ic{
     position: absolute;
     box-sizing: border-box;
     display: block;
     width: 20px;
-    height: 7px;
+    height: 12px;
 }
-.icon-layer1{
+.ic.layer1{
     background-color: #999;
     top: 2px;
     right: 4px;
+    font-size: 0.5em;
+    color: #FFF;
+    padding-top: 0;
 }
-.icon-layer2{
+.ic.layer2{
     background-color: transparent;
-    top: 6px;
+    top: 4px;
     right: 8px;
     border-left: #999 3px solid;
-    border-bottom: #999 3px solid;
+    border-bottom: #999 1px solid;
 }
-.icon-layer3{
+.ic.layer3{
     background-color: transparent;
-    top: 10px;
+    top: 6px;
     right: 12px;
     border-left: #999 3px solid;
-    border-bottom: #999 3px solid;
+    border-bottom: #999 1px solid;
 }
 /** layer toggle button END **/
 
@@ -154,15 +167,9 @@ a.navbar-brand{
     height: 30px;
     padding: 5px 15px;
 }
-/*
-.dropdown-menu > li > a{
-    padding: 3px 10px;
-}
-*/
 .open > .dropdown-toggle.btn-default {
-  /*color: #333;*/
-  background-color: #ccc;
-  border-color: #adadad;
+    background-color: #ccc;
+    border-color: #adadad;
 }
 .work-space{
     position: absolute;
@@ -252,11 +259,12 @@ ul.main-menu-container li.active > ul{
 }
 ul.main-menu-container ul.lev1{
     position: absolute;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 ul.main-menu-container ul.lev1.indent{
     position: absolute;
-    top: 0px;
+    top: -4px;
     left: 182px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -297,7 +305,7 @@ ul.main-menu-container.filledwidth li a:hover{
 ul.main-menu-container.filledwidth ul.lev1{
     position: relative;
     float: none;
-    padding: 0;
+    padding: 3px 0;
     background-color: #F2F2F2;
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
@@ -308,6 +316,7 @@ ul.main-menu-container.filledwidth ul.lev1{
 }
 ul.main-menu-container.filledwidth ul.lev1.indent{
     left: 0px;
+    top: 0px;
 }
 ul.main-menu-container.filledwidth ul.lev1 > li{
     padding: 3px 0 3px 20px;

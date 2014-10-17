@@ -132,10 +132,10 @@ Yii::app()->user->returnUrl=$http->getUrl();
                         </button>
                     </div>
                     <div class="navbar-btn-container layer-btn">
-                        <button type="button" class="navbar-layer-toggle" title="<?php echo Yii::t("sys_msg", "select-window") ?>">
-                            <span class="icon-layer1"></span>
-                            <span class="icon-layer2"></span>
-                            <span class="icon-layer3"></span>
+                        <button type="button" class="navbar-layer-toggle disabled" title="<?php echo Yii::t("sys_msg", "select-window") ?>">
+                            <span class="ic layer1" id="window-count"></span>
+                            <span class="ic layer2"></span>
+                            <span class="ic layer3"></span>
                         </button>
                     </div>
                     <div class="navbar-btn-container resp-menu">
