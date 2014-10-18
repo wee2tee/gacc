@@ -18,7 +18,7 @@ class Doc extends CApplicationComponent {
         if($doctyp !== NULL){
             $lang = Yii::app()->session['sess_lang'];
             //$sql = "select doctyp,shortnam_".$lang." as shortnam,posdes_".$lang." as posdes,jnlexp_".$lang." as jnlexp from isrun where doctyp = :doctyp";
-            $sql = "select doctyp, shortnam_th, shortnam_en, posdes_th, posdes_en, jnlexp_th, jnlexp_en from isrun where doctyp = :doctyp";
+            $sql = "select doctyp, doccod, prefix, shortnam_th, shortnam_en, posdes_th, posdes_en, jnlexp_th, jnlexp_en from isrun where doctyp = :doctyp";
             $params = array(":doctyp" => $doctyp);
             $docs = Isrun::model()->findAllBySql($sql, $params);
             if(!empty($docs)){

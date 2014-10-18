@@ -34,6 +34,8 @@ Yii::app()->user->returnUrl=$http->getUrl();
         <script src="js/jquery.min.js"></script>
         <script src="jquery-ui/jquery-ui.min.js"></script>
         <script>
+            var dialog_msg = {'confirm-close' : 'ปิดหน้าแอพพลิเคชั่นที่เลือก'};
+            
             function toggleFullScreen() {
                 if (!document.fullscreenElement &&    // alternative standard method
                     !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
@@ -94,6 +96,81 @@ Yii::app()->user->returnUrl=$http->getUrl();
                     $("#main-menu-container").removeClass("filledwidth");
                 }
             }
+            
+            // collapse all menu when open appform
+            function collapseMainMenu(){
+                var act_menu = $("#main-menu-container").find(".active").toArray();
+                for( var i=0 ; i<act_menu.length ; i++){
+                    $(act_menu[i]).removeClass("active");
+                }
+                $("#navbar-container").removeClass("in");
+            }
+            
+            function callAppForm(doctyp, doccod, prefix){
+                $.ajax({
+                    url: 'index.php?r=AppForm/'+doctyp,
+                    type: 'post',
+                    data: { doccod:doccod, perfix:prefix },
+                    dataType: 'json',
+                    beforeSend: collapseMainMenu(),
+                    success: function(returned){
+                        if(returned.result === true){
+                            showAppForm({'appform' : returned.appform, 'appform_title' : returned.appform_title, 'appform_id' : returned.appform_id});
+                        }
+                        else{
+                            alert(returned.msg);
+                        }
+                    }
+                });
+            }
+            
+            function showAppForm(appform_data){
+                $("#work-space").append(appform_data.appform);
+                updateAppLayer("open", appform_data.appform_title, appform_data.appform_id);
+            }
+            
+            function updateAppLayer(action, app_title, appform_id){
+                // action open/close
+                if(action === "open"){
+                    $("#appform-count").html( parseInt($("#appform-count").html())+1 ); // increase amount of appform count
+                    $("#navbar-layer-toggle").removeClass("disabled");
+                    attachAppLayerPanel(action, app_title, appform_id);
+                }
+                else{
+                    var app_cnt = parseInt($("#appform-count").html())-1;
+                    $("#appform-count").html( app_cnt ); // decrease amount of appform count
+                    if( app_cnt === 0 ){
+                        $("#navbar-layer-toggle").addClass("disabled");
+                        $("#app-layer-panel").removeClass("show");
+                    }
+                    attachAppLayerPanel(action, "", appform_id);
+                }
+            }
+            
+            function attachAppLayerPanel(action, appform_title, appform_id){
+                // action open/close
+                if(action === "open"){
+                    var new_app = '<div class="app" id="close-'+appform_id+'" onclick="return closeApp(\''+appform_id+'\')">'+appform_title+'</div>';
+                    $("#app-layer-panel").append(new_app);
+                }
+                else{
+                    $("#close-"+appform_id).remove();
+                }
+            }
+            
+            function showAppLayerSelector(context){
+                if(!$(context).hasClass('disabled')){
+                    $("#app-layer-panel").toggleClass("show");
+                }
+            }
+            
+            function closeApp(appform_id){
+                if(confirm(dialog_msg['confirm-close']) === true){
+                    $("#"+appform_id).remove();
+                    updateAppLayer("close", "", appform_id);
+                }
+            }
+            
         </script>
         <script>
             $(function(){
@@ -117,7 +194,7 @@ Yii::app()->user->returnUrl=$http->getUrl();
                             echo CHtml::image("images/logo36_22.png", "gAccount", array( "style"=>"padding-top: 1px; padding-right: 5px; padding-left: 5px;" ));
                         ?>
                     </div>
-                    <div class="collapse navbar-collapse">
+                    <div class="collapse navbar-collapse" id="navbar-container">
                         <!-- Main menu -->
                         <?php
                             require_once 'main_menu.php';
@@ -132,11 +209,14 @@ Yii::app()->user->returnUrl=$http->getUrl();
                         </button>
                     </div>
                     <div class="navbar-btn-container layer-btn">
-                        <button type="button" class="navbar-layer-toggle disabled" title="<?php echo Yii::t("sys_msg", "select-window") ?>">
-                            <span class="ic layer1" id="window-count"></span>
+                        <button type="button" class="navbar-layer-toggle disabled" id="navbar-layer-toggle" title="<?php echo Yii::t("sys_msg", "select-window") ?>" onclick="return showAppLayerSelector($(this))">
+                            <span class="ic layer1" id="appform-count">0</span>
                             <span class="ic layer2"></span>
                             <span class="ic layer3"></span>
                         </button>
+                        <!--<ul class="app-layer-panel">
+                            <li><span>ขายเงินเชื่อ</span><button class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i> </button></li>
+                        </ul>-->
                     </div>
                     <div class="navbar-btn-container resp-menu">
                         <button id="menu-toggle-btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -150,8 +230,11 @@ Yii::app()->user->returnUrl=$http->getUrl();
             </div>
 
             <!-- Begin page content -->
-            <div class="work-space">
+            <div class="work-space" id="work-space">
                 <!-- work space area -->
+            </div>
+            <div class="app-layer-panel" id="app-layer-panel">
+                <!-- app selection -->
             </div>
 
             <div class="footer">

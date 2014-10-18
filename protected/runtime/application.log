@@ -315,3 +315,137 @@ Stack trace:
 #24 {main}
 REQUEST_URI=/gAccount/
 ---
+2014/10/17 09:38:19 [error] [exception.CException] exception 'CException' with message 'AppFormController ไม่สามารถค้นหา "appform/gljnl" ตามคำสั่งได้' in C:\xampp\htdocs\Yii-engine\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php(18): CController->renderPartial('appform/gljnl', NULL, false)
+#1 [internal function]: AppFormController->actionGL(NULL)
+#2 C:\xampp\htdocs\Yii-engine\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AppFormController), Array)
+#3 C:\xampp\htdocs\Yii-engine\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AppFormController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(282): CController->run('GL')
+#8 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(141): CWebApplication->runController('AppForm/GL')
+#9 C:\xampp\htdocs\Yii-engine\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\gAccount\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/gAccount/index.php?r=AppForm/GL
+HTTP_REFERER=http://localhost/gAccount/
+---
+2014/10/17 09:39:38 [error] [exception.CException] exception 'CException' with message 'AppFormController ไม่สามารถค้นหา "appform/gljnl" ตามคำสั่งได้' in C:\xampp\htdocs\Yii-engine\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php(18): CController->renderPartial('appform/gljnl', NULL)
+#1 [internal function]: AppFormController->actionGL(NULL)
+#2 C:\xampp\htdocs\Yii-engine\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AppFormController), Array)
+#3 C:\xampp\htdocs\Yii-engine\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AppFormController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(282): CController->run('GL')
+#8 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(141): CWebApplication->runController('AppForm/GL')
+#9 C:\xampp\htdocs\Yii-engine\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\gAccount\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/gAccount/index.php?r=AppForm/GL
+HTTP_REFERER=http://localhost/gAccount/
+---
+2014/10/18 08:00:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'ระบบไม่สามารถดำเนินการ "GLU" ตามคำสั่งได้' in C:\xampp\htdocs\Yii-engine\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(270): CController->missingAction('GLU')
+#1 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(282): CController->run('GLU')
+#2 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(141): CWebApplication->runController('AppForm/GLU')
+#3 C:\xampp\htdocs\Yii-engine\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\gAccount\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/gAccount/index.php?r=AppForm/GLU
+HTTP_REFERER=http://localhost/gAccount/
+---
+2014/10/18 08:02:02 [error] [exception.CException] exception 'CException' with message 'AppFormController ไม่สามารถค้นหา "//appform/gljnl_u" ตามคำสั่งได้' in C:\xampp\htdocs\Yii-engine\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php(22): CController->renderPartial('//appform/gljnl...', NULL, true)
+#1 [internal function]: AppFormController->actionGL0(NULL)
+#2 C:\xampp\htdocs\Yii-engine\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(AppFormController), Array)
+#3 C:\xampp\htdocs\Yii-engine\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AppFormController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(282): CController->run('GL0')
+#8 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(141): CWebApplication->runController('AppForm/GL0')
+#9 C:\xampp\htdocs\Yii-engine\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\gAccount\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/gAccount/index.php?r=AppForm/GL0
+HTTP_REFERER=http://localhost/gAccount/
+---
+2014/10/18 10:01:05 [error] [php] Undefined variable: data (C:\xampp\htdocs\gAccount\protected\views\appform\gljnl_u.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(869): AppFormController->renderFile()
+#1 C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php(29): AppFormController->renderPartial()
+#2 unknown(0): AppFormController->actionGL0()
+#3 C:\xampp\htdocs\Yii-engine\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\Yii-engine\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(286): AppFormController->runAction()
+#7 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(265): AppFormController->runActionWithFilters()
+#8 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(282): AppFormController->run()
+#9 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\Yii-engine\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\gAccount\index.php(13): CWebApplication->run()
+REQUEST_URI=/gAccount/index.php?r=AppForm/GL0
+in C:\xampp\htdocs\gAccount\protected\views\appform\gljnl_u.php (5)
+in C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php (29)
+in C:\xampp\htdocs\gAccount\index.php (13)
+2014/10/18 10:01:44 [error] [php] Undefined variable: d (C:\xampp\htdocs\gAccount\protected\views\appform\gljnl_u.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(869): AppFormController->renderFile()
+#1 C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php(29): AppFormController->renderPartial()
+#2 unknown(0): AppFormController->actionGL0()
+#3 C:\xampp\htdocs\Yii-engine\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\Yii-engine\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(286): AppFormController->runAction()
+#7 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(265): AppFormController->runActionWithFilters()
+#8 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(282): AppFormController->run()
+#9 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\Yii-engine\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\gAccount\index.php(13): CWebApplication->run()
+REQUEST_URI=/gAccount/index.php?r=AppForm/GL0
+in C:\xampp\htdocs\gAccount\protected\views\appform\gljnl_u.php (5)
+in C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php (29)
+in C:\xampp\htdocs\gAccount\index.php (13)
+2014/10/18 10:03:50 [error] [php] Undefined variable: d (C:\xampp\htdocs\gAccount\protected\views\appform\gljnl_u.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(869): AppFormController->renderFile()
+#1 C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php(29): AppFormController->renderPartial()
+#2 unknown(0): AppFormController->actionGL0()
+#3 C:\xampp\htdocs\Yii-engine\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\Yii-engine\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(286): AppFormController->runAction()
+#7 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(265): AppFormController->runActionWithFilters()
+#8 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(282): AppFormController->run()
+#9 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\Yii-engine\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\gAccount\index.php(13): CWebApplication->run()
+REQUEST_URI=/gAccount/index.php?r=AppForm/GL0
+in C:\xampp\htdocs\gAccount\protected\views\appform\gljnl_u.php (5)
+in C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php (29)
+in C:\xampp\htdocs\gAccount\index.php (13)
+2014/10/18 10:05:00 [error] [php] Undefined variable: d (C:\xampp\htdocs\gAccount\protected\views\appform\gljnl_u.php:5)
+Stack trace:
+#0 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(869): AppFormController->renderFile()
+#1 C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php(29): AppFormController->renderPartial()
+#2 unknown(0): AppFormController->actionGL0()
+#3 C:\xampp\htdocs\Yii-engine\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\Yii-engine\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(286): AppFormController->runAction()
+#7 C:\xampp\htdocs\Yii-engine\framework\web\CController.php(265): AppFormController->runActionWithFilters()
+#8 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(282): AppFormController->run()
+#9 C:\xampp\htdocs\Yii-engine\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\Yii-engine\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\gAccount\index.php(13): CWebApplication->run()
+REQUEST_URI=/gAccount/index.php?r=AppForm/GL0
+in C:\xampp\htdocs\gAccount\protected\views\appform\gljnl_u.php (5)
+in C:\xampp\htdocs\gAccount\protected\controllers\AppFormController.php (29)
+in C:\xampp\htdocs\gAccount\index.php (13)

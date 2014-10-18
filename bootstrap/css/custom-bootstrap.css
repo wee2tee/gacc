@@ -27,12 +27,14 @@ body{
     right: 5px;
 }
 .navbar-fullscreen-toggle{
-    position: relative;
+    position: absolute;
     box-sizing: border-box;
     width: 45px;
     height: 22px;
     padding: 3px;
-    margin: 1px 2px;
+    top: 1px;
+    right: 2px;
+    /*margin: 1px 2px;*/
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     -khtml-border-radius: 4px;
@@ -85,12 +87,13 @@ body{
     right: 52px;
 }
 .navbar-layer-toggle{
-    position: relative;
+    position: absolute;
     box-sizing: border-box;
     width: 38px;
     height: 22px;
     padding: 5px;
-    margin: 1px 2px;
+    top: 1px;
+    right: 2px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     -khtml-border-radius: 4px;
@@ -105,6 +108,7 @@ body{
 }
 .navbar-layer-toggle.disabled .ic.layer1{
     background-color: #DDD;
+    font-size: 0px;
 }
 .navbar-layer-toggle.disabled .ic.layer2,
 .navbar-layer-toggle.disabled .ic.layer3{
@@ -150,10 +154,16 @@ body{
     right: 85px;
 }
 .navbar-toggle{
+    position: absolute;
     padding: 3px 7px;
+    top: 1px;
+    right: 9px;
+    margin: 0;
+    /*
     margin-top: 1px;
     margin-bottom: 1px;
     margin-right: 5px;
+    */
 }
 /** responsive menu toggle button END **/
 
@@ -323,6 +333,35 @@ ul.main-menu-container.filledwidth ul.lev1 > li{
 }
 ul.main-menu-container.filledwidth ul.lev1 a{
     padding: 2px 0;
+}
+.app-layer-panel{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top:25px;
+    bottom: 21px;
+    right: 0px;
+    width: 100px;
+    background-image: url(../../images/overlay-bg-black.png);
+    background-repeat: repeat;
+    border-left: #999 1px solid;
+    box-shadow: -2px 0px 4px rgba(160, 160, 160, 0.8);
+    /*transition: width 300ms ease-out;*/
+    transition: visibility 300ms ease-out, opacity 300ms ease-out, background 200ms ease-out;
+}
+.app-layer-panel.show{
+    visibility: visible;
+    opacity: 1;
+}
+.app-layer-panel.show:hover{
+    background-color: #333;
+}
+
+.app-layer-panel > .app{
+    color: #FFD324;
+}
+.app-layer-panel > .app:hover{
+    
 }
 
 /**  Icon button/link **/
