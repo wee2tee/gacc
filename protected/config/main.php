@@ -66,7 +66,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=gaccount',
+			'connectionString' => 'mysql:host=localhost;dbname=gaccount_00000001_itone57',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'wee2tee01121976',
@@ -94,7 +94,10 @@ return array(
 		),
                 'CDoc'=>array(
                         'class'=>'Doc',
-                )
+                ),
+                'CToolBar'=>array(
+                        'class'=>'ToolBar',
+                ),
                 /*
                 'bootstrap' => array(
                     'class' => 'bootstrap.components.TbApi',   

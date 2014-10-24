@@ -8,7 +8,7 @@
                         $child = Yii::app()->CDoc->getChild("GL");
                         foreach ($child['docs'] as $doc):
                         ?>
-                        <li><a href="javascript:void(0)" class="icon" onclick="return callAppForm('GL0', <?php echo $doc->doccod ?>)"><?php echo (Yii::app()->session['sess_lang']=='th' ? $doc->shortnam_th : $doc->shortnam_en ); ?></a></li>
+                        <li><a href="javascript:void(0)" class="icon" onclick="return callAppForm('GL0', '<?php echo $doc->doccod ?>', '<?php echo $doc->prefix ?>')"><?php echo (Yii::app()->session['sess_lang']=='th' ? $doc->shortnam_th : $doc->shortnam_en ); ?></a></li>
                         <?php
                         endforeach;
                         ?>
@@ -20,7 +20,7 @@
                         $child = Yii::app()->CDoc->getChild("GL");
                         foreach ($child['docs'] as $doc):
                         ?>
-                        <li><a href="javascript:void(0)" class="icon" onclick="return callAppForm('GL1', <?php echo $doc->doccod ?>)"><?php echo (Yii::app()->session['sess_lang']=='th' ? $doc->shortnam_th : $doc->shortnam_en ); ?></a></li>
+                        <li><a href="javascript:void(0)" class="icon" onclick="return callAppForm('GL1', '<?php echo $doc->doccod ?>', '<?php echo $doc->prefix ?>')"><?php echo (Yii::app()->session['sess_lang']=='th' ? $doc->shortnam_th : $doc->shortnam_en ); ?></a></li>
                         <?php
                         endforeach;
                         ?>

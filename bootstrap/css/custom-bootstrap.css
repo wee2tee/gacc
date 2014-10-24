@@ -10,6 +10,15 @@ and open the template in the editor.
 body{
     font-size: 13px;
 }
+iframe.blank{
+    display: none;
+    width: 0px;
+    height: 0px;
+}
+.cleared{
+    clear: both;
+    float: none;
+}
 #navbar{
     min-height: 25px;
     margin-bottom: 0;
@@ -188,7 +197,7 @@ a.navbar-brand{
     left: 0px;
     right: 0px;
     background-color: #FFD324;
-    padding: 5px;
+    padding: 0;
     overflow: auto;
 }
 .footer{
@@ -348,6 +357,7 @@ ul.main-menu-container.filledwidth ul.lev1 a{
     box-shadow: -2px 0px 4px rgba(160, 160, 160, 0.8);
     /*transition: width 300ms ease-out;*/
     transition: visibility 300ms ease-out, opacity 300ms ease-out, background 200ms ease-out;
+    z-index: 1002;
 }
 .app-layer-panel.show{
     visibility: visible;
@@ -415,5 +425,141 @@ ul.main-menu-container.filledwidth ul.lev1 a{
 #main-menu-container.filledwidth .lev1 .icon.dropdown.after:after{
     background-position: -64px -16px;
 }
+#dialog-overlay{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(250, 250, 250, 0.7);
+    z-index: 2000;
+}
+#dialog-message{
+    border:#888 2px solid;
+    background-color: #DDD;
+}
 
+/** toolbar btn **/
+.toolbar-container{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 2px 3px 0;
+    background-color: #B7D6E7;
+    z-index: 1001;
+}
+.toolbar-btn{
+    position: relative;
+    height: 30px;
+    padding: 0 2px 0 26px;
+    margin: 0;
+    /*background-color: #F2F2F2;*/
+    background-color: transparent;
+    border-radius: 0px;
+    border: transparent 1px solid;
+    float: left;
+}
+.toolbar-btn:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+    border: #CCC 1px outset;
+    border-radius: 3px;
+}
+.toolbar-btn:before{
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: 1px;
+    width: 28px;
+    height: 28px;
+    background-image: url('../../images/toolbar-icon28.png')
+}
+.toolbar.divider{
+    display: inline-block;
+    float: left;
+    background-color: #79B4DC;
+    width: 1px;
+    height: 24px;
+    margin: 4px 3px;
+}
+.toolbar-btn.add:before{
+    background-position: 0px 0px;
+}
+.toolbar-btn.edit:before{
+    background-position: -28px 0px;
+}
+.toolbar-btn.void:before{
+    background-position: -56px 0px;
+}
+.toolbar-btn.delete:before{
+    background-position: -84px 0px;
+}
+.toolbar-btn.cancel:before{
+    background-position: -112px 0px;
+}
+.toolbar-btn.save:before{
+    background-position: -140px 0px;
+}
+.toolbar-btn.first:before{
+    background-position: -168px 0px;
+}
+.toolbar-btn.prev:before{
+    background-position: -196px 0px;
+}
+.toolbar-btn.next:before{
+    background-position: -224px 0px;
+}
+.toolbar-btn.last:before{
+    background-position: -253px 0px;
+}
+.toolbar-btn.search:before{
+    background-position: -280px 0px;
+}
+.toolbar-btn.item:before{
+    background-position: -310px 0px;
+}
+.toolbar-btn.note:before{
+    background-position: -337px 0px;
+}
+.toolbar-btn.print:before{
+    background-position: -365px 0px;
+}
+.toolbar-btn.so:before{
+    background-position: -394px 0px;
+}
+/****/
+
+/** appform **/
+.appform-root{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    min-width: 800px;
+    padding:0;
+    background-color: #B7D6E7;
+    border: #333 1px outset;
+    overflow: hidden;
+}
+.appform-content{
+    position: absolute;
+    top: 35px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background-color: #FFF;
+    overflow: scroll;
+    border: #333 1px solid;
+}
+.appform-panel-left{
+    position: relative;
+    float: left;
+    border: #CCC 1px solid;
+    border-radius: 2px;
+    min-width: 400px;
+    margin: 5px;
+    width: 45%;
+}
 /**  **/
